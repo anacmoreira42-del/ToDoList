@@ -28,21 +28,106 @@ public class telas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jTextFieldDescricaoTarefa = new javax.swing.JTextField();
+        jComboBoxFiltroStatus = new javax.swing.JComboBox<>();
+        jButtonAdicionarTarefa = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTableTarefas = new javax.swing.JTable();
+        jButtonConcluirTarefa = new javax.swing.JButton();
+        jButtonRemoverTarefa = new javax.swing.JButton();
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jComboBoxFiltroStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos", "Concluído", "Não concluído" }));
+
+        jButtonAdicionarTarefa.setText("adicionar");
+
+        jTableTarefas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Tarefa", "Status"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                true, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jTableTarefas);
+
+        jButtonConcluirTarefa.setText("Concluir");
+        jButtonConcluirTarefa.addActionListener(this::jButtonConcluirTarefaActionPerformed);
+
+        jButtonRemoverTarefa.setText("Remover");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jTextFieldDescricaoTarefa)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonAdicionarTarefa))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButtonConcluirTarefa)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonRemoverTarefa)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jComboBoxFiltroStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(424, Short.MAX_VALUE))))
+            .addComponent(jScrollPane2)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldDescricaoTarefa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonAdicionarTarefa))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jComboBoxFiltroStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonConcluirTarefa)
+                    .addComponent(jButtonRemoverTarefa))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonConcluirTarefaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConcluirTarefaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonConcluirTarefaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -70,5 +155,14 @@ public class telas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonAdicionarTarefa;
+    private javax.swing.JButton jButtonConcluirTarefa;
+    private javax.swing.JButton jButtonRemoverTarefa;
+    private javax.swing.JComboBox<String> jComboBoxFiltroStatus;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTableTarefas;
+    private javax.swing.JTextField jTextFieldDescricaoTarefa;
     // End of variables declaration//GEN-END:variables
 }
