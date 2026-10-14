@@ -41,6 +41,10 @@ public class TelaToDoListV1_07102026 extends javax.swing.JFrame {
         model.setRowCount(0);
         
         setTitle("Lista de Tarefas V2");
+        
+        carregarTarefas();
+        preencherTabela();
+        atualizarEstatisticas();
     }
 
     /**
@@ -77,11 +81,11 @@ public class TelaToDoListV1_07102026 extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Tarefa", "Status", "Data"
+                "Tarefa", "Status", "Data", "Data Concluída"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
